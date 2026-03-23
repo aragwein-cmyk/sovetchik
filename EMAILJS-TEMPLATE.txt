@@ -1,0 +1,20 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9fafb;">
+  <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 40px; text-align: center; border-radius: 12px 12px 0 0;">
+    <h1 style="color: white; margin: 0; font-size: 28px;">🎉 Welcome to Sovetchik!</h1>
+    <p style="color: rgba(255,255,255,0.9); margin: 10px 0 0 0; font-size: 16px;">Your AI-powered job search assistant</p>
+  </div>
+  
+  <div style="padding: 40px; background: white; border-radius: 0 0 12px 12px;">
+    <h2 style="color: #1f2937; margin-bottom: 10px;">Hi {{to_name}}!</h2>
+    <p style="color: #6b7280; font-size: 16px; line-height: 1.5;">Thank you for signing up for Sovetchik! To complete your registration, please confirm your email address using the code below:</p>
+    
+    <div style="background: #f8fafc; border: 2px solid #e5e7eb; border-radius: 8px; padding: 24px; text-align: center; margin: 30px 0;">
+      <div style="font-size: 14px; color: #6b7280; font-weight: 600; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Verification Code</div>
+      <div style="font-size: 32px; font-weight: 700; color: #667eea; letter-spacing: 4px; line-height: 1;">{{verification_code}}</div>
+    </div>
+    
+    <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 16px; margin: 24px 0; border-radius: 0 8px 8px 0;">
+      <p style="color: #92400e; font-size: 14px; margin: 0;"><strong>⏰ Important:</strong> This code expires in 15 minutes. If you didn't create an account, please ignore this email.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+@echo off
+title 🚀 Деплой мобильной версии на Vercel
+echo.
+echo 📱 СОЗДАНИЕ МОБИЛЬНОЙ ВЕРСИИ САЙТА
+echo 🌐 БЕСПЛАТНЫЙ СЕРВЕР С ПОСТОЯННОЙ ССЫЛКОЙ
+echo.
+
+REM Проверяем Node.js
+echo 📋 Проверяем Node.js...
+node --version >nul 2>&1
+if %errorlevel% neq 0 (
+    echo ❌ Node.js не найден! Установите с https://nodejs.org/
+    pause
+    exit /b 1
+)
+
+REM Проверяем npm
+echo 📋 Проверяем npm...
+npm --version >nul 2>&1
+if %errorlevel% neq 0 (
+    echo ❌ npm не найден!
+    pause
+    exit /b 1
+)
+
+REM Проверяем зависимости
+echo 📋 Проверяем зависимости...
+if not exist node_modules (
+    echo 📦 Устанавливаем зависимости...
+    npm install
+    if %errorlevel% neq 0 (
+        echo ❌ Ошибка установки зависимостей!
+        pause
+        exit /b 1
+    )
+)
+
+REM Проверяем Vercel CLI
+echo 📋 Проверяем Vercel CLI...
+vercel --version >nul 2>&1
+if %errorlevel% neq 0 (
+    echo 📦 Устанавливаем Vercel CLI...
+    npm install -g vercel
+    if %errorlevel% neq 0 (
+        echo ❌ Ошибка установки Vercel!
+        pause
+        exit /b 1
+    )
+)
+
+REM Сборка проекта для мобильной версии
+echo 📱 Собираем мобильную версию...
+npm run build
+if %errorlevel% neq 0 (
+    echo ❌ Ошибка сборки проекта!
+    pause
+    exit /b 1
+)
+
+REM Деплой на Vercel
+echo 🚀 Деплоим на Vercel...
+echo.
+echo 📋 ВАЖНО: Вам нужно будет:
+echo    1. Войти в свой Vercel аккаунт (или создать новый)
+echo    2. Разрешить доступ Vercel к вашему GitHub/GitLab
+echo    3. Выбрать проект для деплоя
+echo    4. Получить постоянную ссылку
+echo.
+
+vercel --prod
+
+if %errorlevel% neq 0 (
+    echo ❌ Ошибка деплоя!
+    pause
+    exit /b 1
+)
+
+echo.
+echo ✅ МОБИЛЬНАЯ ВЕРСИЯ УСПЕШНО ЗАДЕПЛОЕНА!
+echo.
+echo 🌐 Ваш сайт доступен по ссылке которую показал Vercel
+echo 📱 Сайт оптимизирован для мобильных устройств
+echo 📧 Вы можете отправить эту ссылку друзьям для тестирования
+echo.
+echo 📧 Ссылка будет работать на телефонах, планшетах и компьютерах
+echo.
+echo 📧 Для обновления сайта снова запустите этот скрипт
+echo.
+
+pause
