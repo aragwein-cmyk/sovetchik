@@ -1,0 +1,40 @@
+# Vercel ignore file
+# Исключаем файлы которые не нужны для деплоя
+
+# Папки сборки и зависимости
+.next/
+out/
+node_modules/
+
+# Лог файлы
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Временные файлы
+*.tmp
+*.temp
+
+# Файлы окружения
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Покрытие кода
+coverage/
+
+# IDE файлы
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Пакетные менеджеры
+package-lock.json
+yarn.lock
